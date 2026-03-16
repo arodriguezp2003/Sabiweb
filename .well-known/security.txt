@@ -1,0 +1,4 @@
+# Security contact for sabinasalgado.cl
+Contact: https://wa.me/56912345678
+Preferred-Languages: es, en
+Canonical: https://sabinasalgado.cl/.well-known/security.txt
