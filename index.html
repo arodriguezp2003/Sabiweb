@@ -54,6 +54,15 @@
   <!-- Fonts with display=swap for CLS -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
 
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V2FYG9DKXL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V2FYG9DKXL');
+  </script>
+
   <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
 
@@ -884,6 +893,26 @@
 
     document.querySelectorAll('.animate-slide-left, .animate-slide-right').forEach(function(el) {
       slideObserver.observe(el);
+    });
+
+    // GA4 Event Tracking
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        var isShare = this.classList.contains('share-card');
+        gtag('event', isShare ? 'share' : 'contact_whatsapp', {
+          event_category: isShare ? 'referral' : 'contact',
+          event_label: isShare ? 'whatsapp_share' : this.closest('.hero') ? 'hero_cta' : this.closest('.cta-banner') ? 'cta_banner' : this.closest('.contacto') ? 'contact_section' : 'floating_button'
+        });
+      });
+    });
+
+    document.querySelectorAll('a[href*="instagram"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        gtag('event', 'contact_instagram', {
+          event_category: 'contact',
+          event_label: 'instagram_profile'
+        });
+      });
     });
   </script>
 
