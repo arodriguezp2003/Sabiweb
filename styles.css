@@ -1396,6 +1396,27 @@ img { max-width: 100%; display: block; }
   50% { transform: translateY(-6px); }
 }
 
+.proceso-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+  width: 100%;
+}
+
+.proceso-cta .btn {
+  padding: 18px 40px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 32px rgba(181, 89, 60, 0.3);
+  letter-spacing: 0.02em;
+}
+
+.proceso-cta .btn:hover {
+  box-shadow: 0 12px 40px rgba(181, 89, 60, 0.45);
+  transform: translateY(-3px);
+}
+
 /* --- Service Pages --- */
 
 /* Breadcrumb */
