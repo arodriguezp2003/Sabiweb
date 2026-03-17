@@ -1221,6 +1221,8 @@ img { max-width: 100%; display: block; }
 
 .whatsapp-icon { background: #dcf8e6; color: #25d366; }
 .instagram-icon { background: #fce4ec; color: #e4405f; }
+.share-icon { background: var(--primary-light); color: var(--primary); }
+.share-card { border-style: dashed; }
 
 .contacto-card-body { flex: 1; }
 .contacto-card-body h3 {
