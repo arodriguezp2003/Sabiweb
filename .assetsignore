@@ -1,0 +1,8 @@
+.claude/
+docs/
+.git/
+.gitignore
+node_modules/
+og-generator.html
+.DS_Store
+.wrangler/
