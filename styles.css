@@ -4,25 +4,25 @@
    ======================================== */
 
 :root {
-  --bg: #fafaf8;
-  --bg-warm: #f5f0ea;
+  --bg: #f8f6f3;
+  --bg-warm: #efe9e0;
   --bg-card: #ffffff;
   --text: #1a1714;
-  --text-secondary: #6b6560;
-  --text-muted: #9a9490;
-  --primary: #b5593c;
-  --primary-hover: #9a4830;
-  --primary-light: rgba(181, 89, 60, 0.08);
-  --primary-glow: rgba(181, 89, 60, 0.15);
-  --accent: #6b7f52;
-  --accent-light: rgba(107, 127, 82, 0.1);
-  --border: rgba(0, 0, 0, 0.06);
-  --border-hover: rgba(0, 0, 0, 0.12);
+  --text-secondary: #5a534e;
+  --text-muted: #8a837d;
+  --primary: #a04a2f;
+  --primary-hover: #873d26;
+  --primary-light: rgba(160, 74, 47, 0.07);
+  --primary-glow: rgba(160, 74, 47, 0.14);
+  --accent: #5a6e44;
+  --accent-light: rgba(90, 110, 68, 0.1);
+  --border: rgba(0, 0, 0, 0.07);
+  --border-hover: rgba(0, 0, 0, 0.14);
   --white: #ffffff;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
-  --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
-  --shadow-lg: 0 12px 40px rgba(0,0,0,0.08);
-  --shadow-xl: 0 20px 60px rgba(0,0,0,0.1);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.1);
+  --shadow-xl: 0 20px 60px rgba(0,0,0,0.12);
   --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display: 'Fraunces', Georgia, serif;
   --radius: 16px;
