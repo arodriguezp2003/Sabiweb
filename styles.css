@@ -558,6 +558,312 @@ img { max-width: 100%; display: block; }
   color: var(--text-muted);
 }
 
+/* --- Sobre Mí --- */
+.sobre-mi {
+  padding: 0;
+  background: transparent;
+  position: relative;
+  margin-top: 20px;
+}
+
+.sobre-mi::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 75%;
+  background: var(--bg-warm);
+  border-radius: 0;
+}
+
+.sobre-mi-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: end;
+  position: relative;
+}
+
+/* --- Slide Animations --- */
+.animate-slide-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+}
+
+.animate-slide-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  transition-delay: var(--delay, 0s);
+}
+
+.animate-slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --- Photo Side --- */
+.sobre-mi-photo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+}
+
+.photo-frame {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.photo-bg-shape {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, rgba(181, 89, 60, 0.12), rgba(107, 127, 82, 0.1));
+  filter: blur(2px);
+}
+
+.photo-img {
+  position: relative;
+  z-index: 1;
+  width: 480px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: -4px;
+  filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.12));
+  transition: transform 0.6s var(--ease);
+}
+
+.photo-frame:hover .photo-img {
+  transform: translateY(-6px);
+}
+
+/* Experience Badge */
+.photo-experience-badge {
+  position: absolute;
+  bottom: 60px;
+  right: -10px;
+  background: var(--text);
+  color: var(--white);
+  padding: 16px 20px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  animation: badge-float 4s ease-in-out infinite;
+}
+
+.badge-number {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+  background: linear-gradient(135deg, #d4845c, var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.badge-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+@keyframes badge-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* --- Content Side --- */
+.sobre-mi-content {
+  padding: 80px 0;
+}
+
+.sobre-mi-content .section-tag {
+  text-align: left;
+}
+
+.sobre-mi-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 6px;
+}
+
+.sobre-mi-role {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--primary);
+  letter-spacing: -0.01em;
+  font-style: italic;
+}
+
+.sobre-mi-divider {
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 2px;
+  margin: 20px 0;
+}
+
+.sobre-mi-intro {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+
+.sobre-mi-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.sobre-mi-credenciales {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.credencial {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: all 0.4s var(--ease);
+}
+
+.credencial:hover {
+  border-color: var(--primary-glow);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.credencial-icon {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--primary-light), rgba(107, 127, 82, 0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  transition: all 0.3s var(--ease);
+}
+
+.credencial:hover .credencial-icon {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: var(--white);
+}
+
+/* --- Sobre Mí Responsive --- */
+@media (max-width: 1024px) {
+  .sobre-mi-inner {
+    gap: 40px;
+  }
+  .photo-img {
+    width: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sobre-mi {
+    margin-top: 20px;
+  }
+  .sobre-mi::before {
+    height: 55%;
+  }
+  .sobre-mi-inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .sobre-mi-photo-wrap {
+    order: -1;
+  }
+  .sobre-mi-content {
+    padding: 32px 0 50px;
+    text-align: left;
+  }
+  .photo-img {
+    width: 250px;
+  }
+  .photo-bg-shape {
+    width: 220px;
+    height: 220px;
+  }
+  .photo-experience-badge {
+    right: 20%;
+    bottom: 10px;
+    padding: 10px 14px;
+  }
+  .badge-number {
+    font-size: 1.2rem;
+  }
+  .badge-label {
+    font-size: 0.6rem;
+  }
+  .sobre-mi-content .section-tag {
+    text-align: left;
+  }
+  .sobre-mi-divider {
+    margin: 16px 0;
+  }
+  .sobre-mi-role {
+    text-align: left;
+  }
+  .sobre-mi-credenciales {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-img {
+    width: 220px;
+  }
+  .photo-bg-shape {
+    width: 190px;
+    height: 190px;
+  }
+  .photo-experience-badge {
+    right: 15%;
+    padding: 8px 12px;
+    gap: 6px;
+  }
+  .badge-number {
+    font-size: 1.1rem;
+  }
+}
+
 /* --- Proceso / Timeline --- */
 .proceso {
   padding: 100px 0;
